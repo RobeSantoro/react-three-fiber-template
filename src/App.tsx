@@ -1,45 +1,20 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+export default function App() {
+  return (    
+      <Canvas>
+        <OrbitControls />
+        <gridHelper args={[10, 10]} />
+        <axesHelper args={[2]} />
+        <mesh>
+          <boxBufferGeometry />
+
+          <meshStandardMaterial color={0x00ff00} />
+        </mesh>
+        <ambientLight args={[0xffffff]} intensity={0.1} />
+        <directionalLight position={[1, 2, 5]} intensity={1} />
+      </Canvas>    
+  );
 }
-
-export default App
