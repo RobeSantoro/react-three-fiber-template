@@ -50,6 +50,14 @@ export default function App() {
             speed={1} />
         </RoundedBox>
 
+        
+        <RoundedBox args={[1, 1, 1]} position={[-2, 0, 0]}>
+          <MeshWobbleMaterial
+            color="#f752fd"
+            factor={1}
+            speed={1} />
+        </RoundedBox>+
+
         <Plane args={[10, 10]}
           position={[0, -2, 0]}
           rotation={[-1.57, 0, 0]}>
