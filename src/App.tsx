@@ -6,7 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import { Html, MeshDistortMaterial, MeshReflectorMaterial, MeshWobbleMaterial, Plane, RoundedBox, Sphere } from '@react-three/drei';
 import { OrbitControls } from "@react-three/drei";
 
-import Helpers from "./components/helpers/helpers";
+import Helpers from "./components/helpers";
 
 const Loading = <Html><div>LOADING...</div></Html>;
 
